@@ -49,16 +49,10 @@ The project follows a clean, industry-style ML pipeline from raw CSV to deployed
 - **Evaluation**: ROC-AUC, F1-score, precision, recall, and confusion matrix on validation and test splits.  
 - **Deployment**: Flask API that loads the serialized pipeline and exposes a `/predict` endpoint for real-time scoring. 
 
-Key engineered features include: 
-
-- `interview_hour` and `time_of_day` derived from `interview_time`. 
-- `reschedule_ratio = past_reschedules / (scheduled_day_gap + 1)`. 
-- `salary_per_year_exp = expected_salary / (experience + 1)`. 
-- `notice_gap_diff = notice_period - scheduled_day_gap`. 
 
 ---
 
-## 🧱 Tech Stack [web:21]
+## 🧱 Tech Stack 
 
 - **Language**: Python 3.x. 
 - **ML / Data**: pandas, NumPy, scikit-learn, SciPy. 
@@ -68,21 +62,20 @@ Key engineered features include:
 
 ---
 
-## 📁 Project Structure 
+## 🖼️ Screenshots [web:31]
 
-A suggested minimal structure for the repository is shown below. 
+Below is a quick preview of the Flask web interface for the Recruitment Interview No-Show Prediction system.  
 
-.
-├── interview_no_show.csv
-│             # Raw dataset
-├── interview_no_show_pipeline.pkl
-│   
-├── 01_eda_and_modeling.ipynb
-│   
-├── templates
-│   ├── form.html              # Training script to build pipeline
-│   └── styles.css                       # Helper functions
-└── app.py
-                          # Streamlit/FastAPI/Flask app
+![App Screenshot](assets/interview_no_show_app.png) <!-- adjust path/name --> [web:32]  
 
+
+## 📈 Model Performance 
+
+The final tuned model was evaluated on a held-out test set using multiple classification metrics that are better suited than accuracy for potentially imbalanced no-show data.  
+
+- **F1 score**: 95% — harmonic mean of precision and recall, indicating a strong balance between the two.  
+- **Recall**: 98% — the model captures almost all true no-shows, minimizing false negatives. 
+- **Precision**: 96% — most of the candidates flagged as likely no-shows are indeed no-shows, keeping false positives low.
+
+These results suggest that the model is highly effective for operational use, especially in scenarios where missing a no-show (low recall) would be more costly than occasionally over-flagging a candidate (precision). 
 
