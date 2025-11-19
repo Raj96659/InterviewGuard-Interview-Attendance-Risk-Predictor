@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interview No-Show Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="wrapper">
+    <div class="card">
+
+        <h1>Interview No-Show Prediction</h1>
+        <p class="subtitle">Enter candidate details to estimate attendance probability.</p>
+
+        <form action="/predict_form" method="POST">
+            
+            <div class="grid">
+
+                <div class="group">
+                    <label>Experience (years)</label>
+                    <input type="number" step="0.1" name="experience" required>
+                </div>
+
+                <div class="group">
+                    <label>Notice Period (days)</label>
+                    <input type="number" step="1" name="notice_period" required>
+                </div>
+
+                <div class="group">
+                    <label>Communication Score (1–10)</label>
+                    <input type="number" step="1" name="communication_score" required>
+                </div>
+
+                <div class="group">
+                    <label>Expected Salary (LPA)</label>
+                    <input type="number" step="0.1" name="expected_salary" required>
+                </div>
+
+                <div class="group">
+                    <label>Scheduled Day Gap</label>
+                    <input type="number" name="scheduled_day_gap" required>
+                </div>
+
+                <div class="group">
+                    <label>Past Reschedules</label>
+                    <input type="number" name="past_reschedules" required>
+                </div>
+
+                <div class="group full">
+                    <label>Job Role</label>
+                    <select name="job_role" required>
+                        <option value="Data Analyst">Data Analyst</option>
+                        <option value="Frontend Developer">Frontend Developer</option>
+                        <option value="Software Engineer">Software Engineer</option>
+                        <option value="QA Tester">QA Tester</option>
+                        <option value="Backend Developer">Backend Developer</option>
+                    </select>
+                </div>
+
+                <div class="group full">
+                    <label>Candidate Location</label>
+                    <select name="candidate_location" required>
+                        <option value="Same City">Same City</option>
+                        <option value="Different City">Different City</option>
+                    </select>
+                </div>
+
+                <div class="group full">
+                    <label>Current Company Size</label>
+                    <select name="current_company_size" required>
+                        <option value="Startup">Startup</option>
+                        <option value="Mid-size">Mid-size</option>
+                        <option value="Enterprise">Enterprise</option>
+                    </select>
+                </div>
+
+                <div class="group full">
+                    <label>Time of Day</label>
+                    <select name="time_of_day" required>
+                        <option value="Morning">Morning</option>
+                        <option value="Afternoon">Afternoon</option>
+                        <option value="Evening">Evening</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <button class="btn">Predict No-Show</button>
+        </form>
+
+        {% if prediction is not none %}
+        <div class="result-box">
+            {% if prediction == 1 %}
+                <p class="result danger">⚠ Candidate Likely to <b>Not Show Up</b></p>
+            {% else %}
+                <p class="result success">✔ Candidate Likely to <b>Attend</b></p>
+            {% endif %}
+            <p class="probability">Probability: <b>{{ probability }}</b></p>
+        </div>
+        {% endif %}
+
+    </div>
+</div>
+
+</body>
+</html>
