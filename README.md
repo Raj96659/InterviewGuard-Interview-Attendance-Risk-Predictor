@@ -72,3 +72,17 @@ Key engineered features include:
 
 A suggested minimal structure for the repository is shown below. 
 
+.
+├── interview_no_show.csv
+│             # Raw dataset
+├── interview_no_show_pipeline.pkl
+│   
+├── 01_eda_and_modeling.ipynb
+│   
+├── templates
+│   ├── form.html              # Training script to build pipeline
+│   └── styles.css                       # Helper functions
+└── app.py
+                          # Streamlit/FastAPI/Flask app
+
+
