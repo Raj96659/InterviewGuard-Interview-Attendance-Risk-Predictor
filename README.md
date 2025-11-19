@@ -1,21 +1,21 @@
-# InterviewGuard-Interview-Attendance-Risk-Predictor
+# InterviewGuard-Interview Attendance Risk Predictor
 
 
-End-to-end machine learning pipeline to **predict** whether a candidate will attend a scheduled recruitment interview, with a production-style Flask API for real-time scoring. [web:21]
+End-to-end machine learning pipeline to **predict** whether a candidate will attend a scheduled recruitment interview, with a production-style Flask API for real-time scoring. 
 
 ---
 
 ## 🚀 Project Overview 
 
-Companies lose time and revenue when candidates do not show up for scheduled interviews, making proactive no-show prediction highly valuable for recruiters. [web:25]  
-This project builds a full binary classification pipeline using scikit-learn and Flask to estimate the probability of a candidate missing an interview based on historical and scheduling features. [web:24]
+Companies lose time and revenue when candidates do not show up for scheduled interviews, making proactive no-show prediction highly valuable for recruiters. 
+This project builds a full binary classification pipeline using scikit-learn and Flask to estimate the probability of a candidate missing an interview based on historical and scheduling features. 
 
 ---
 
 ## 🧩 Problem Statement 
 
-Given candidate and interview-related features, the task is to predict the target variable `no_show`, where `1` indicates a no-show and `0` indicates the candidate attended. [web:25]  
-The model output can be used to trigger reminders, double-confirmations, or rescheduling strategies for high-risk candidates. [web:21]
+Given candidate and interview-related features, the task is to predict the target variable `no_show`, where `1` indicates a no-show and `0` indicates the candidate attended.   
+The model output can be used to trigger reminders, double-confirmations, or rescheduling strategies for high-risk candidates. 
 
 ---
 
