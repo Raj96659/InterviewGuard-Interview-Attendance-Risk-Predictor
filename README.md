@@ -66,7 +66,7 @@ The project follows a clean, industry-style ML pipeline from raw CSV to deployed
 
 Below is a quick preview of the Flask web interface for the Recruitment Interview No-Show Prediction system.  
 
-![App Screenshot](assets/interview_no_show_app.png) <!-- adjust path/name --> [web:32]  
+![App Screenshot](https://github.com/Raj96659/InterviewGuard-Interview-Attendance-Risk-Predictor/blob/main/Screenshot%202025-11-19%20155500.png) <!-- adjust path/name -->  
 
 
 ## 📈 Model Performance 
